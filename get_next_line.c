@@ -6,7 +6,7 @@
 /*   By: ccliffor <ccliffor@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 15:54:25 by ccliffor          #+#    #+#             */
-/*   Updated: 2020/05/18 14:37:27 by ccliffor         ###   ########.fr       */
+/*   Updated: 2020/05/18 15:02:55 by ccliffor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ int		get_next_line(const int fd, char **line)
 		b = ft_strnew(0);
 	while (!(li = 0))
 	{
+		// puts(b);
 		b = join_buffers(b, rb);
-		if ((li = ft_strchr_index(b, '\n')) == -1 || (li > 0))
+		if ((li = ft_strchr_index(b, '\n')) == -1)
 		{
 			if ((br = read(fd, rb, BUFFER_SIZE)) == 0)
 				break ;
